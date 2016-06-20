@@ -1,1 +1,10 @@
 Machine learning is used everywhere.
+
+Week 1 is about explaining what is machine learning and
+where you can use it.
+
+How to do linear regression with one variable,
+cost function (in this case squared error function) and
+Gradient descent.
+
+What are Matrix, Vector, and operation you can do on them.

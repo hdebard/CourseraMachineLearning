@@ -1,0 +1,111 @@
+# # # # # # # # # # # #
+# 	  	  	  	  	  #
+#	  Parameters	  #
+#	   Learning		  #
+#	   				  #
+# # # # # # # # # # # #
+
+
+
+
+# Gradient Descent #
+  	
+	_ Rappel: _ function = J(theta[0],theta[1])
+	  		  _ goal = minimize J
+
+
+	_ Outline:
+			  _ Initialize theta\'s
+			  _ Keep changing until we get the minimum
+
+	_ Resume:
+
+			  _ Strange 3D plot with local minimums.
+
+
+	_ Explanation: _ Gradient descent = do baby step to minimize J
+
+
+	_ Gradient descent algorithm:
+
+	  		- repeat until convergence {
+														|-> derivative term
+			  theta[j] := theta[j] - ((alpha * (deriv / dervi theta[j])) * J(theta[0]m theta[1]))
+			  		   	  		   	 		   		  		  	(for j = 0 and j = 1)
+			}							|-> learning rate
+
+			- You need simultaneous update:
+
+			  _ temp0 := theta[0] - ((alpha * (deriv / dervi theta[j])) * J(theta[0]m theta[1]))
+			  _ temp1 := theta[1] - ((alpha * (deriv / dervi theta[j])) * J(theta[0]m theta[1]))
+			  _ theta[0] := temp0
+			  _ theta[1] := temp1
+
+# Gradient Descent #
+
+  	_ Rappel:
+	  	_ Gradient descent algorithm:
+
+	  			- repeat until convergence {
+																|-> derivative term
+				  theta[j] := theta[j] - ((alpha * (deriv / dervi theta[j])) * J(theta[0]m theta[1]))
+			  		   	  		   	 		   		  		  	(for j = 0 and j = 1)
+			}								|-> learning rate
+
+	
+
+	_ Resume:
+
+			_ the derive term equal the tangent to this point of the function J to update theta.
+
+			_ the learning rate equal the multiplicator used to update theta
+
+						- if alpha is too small, gradient descent will be slow
+
+						- if alpha is too big, gradient descnet can overshoot the minimum,
+						     it may fail to converge or even diverge
+
+			_ if we are at a local minimum, gradient descent will be stuck
+
+			_ as we approach local minimum, gradient descent will automatically take smaller step
+			  - no need to decrease alpha
+
+
+
+
+# Gradient descent for linear regression #
+
+
+  	_ Rappel:
+	  	_ Gradient descent algorithm:
+
+	  			- repeat until convergence {
+																|-> derivative term
+				  theta[j] := theta[j] - ((alpha * (deriv / dervi theta[j])) * J(theta[0]m theta[1]))
+			  		   	  		   	 		   		  		  	(for j = 0 and j = 1)
+			}								|-> learning rate
+
+
+  		_ Hypothesis: h[theta](x) = theta[0] + theta[1] * x
+ 
+  		_ Cost Function: J(theta[0], theta[1]) = (1/(2 * m) *  (m ∑ i) (h[theta](x{i}) - y{i}){2}
+
+
+
+	_ Goal : Calculing the derivate term
+
+	
+	_ Explaination:
+
+		- Gradient descent + cost function of linear regression:
+   			  _ j = 0 := (deriv / dervi theta[j]) * J(theta[0]m theta[1]) = (1/(2 * m) * (m ∑ i) (h[theta0](x{i}) - y{i})
+			  _ j = 1 := (deriv / dervi theta[j]) * J(theta[0]m theta[1]) = (1/(2 * m) * ((m ∑ i) (h[theta0](x{i}) - y{i}) * x{i})
+			  ;; no local minimum because only 1 variable parameter
+
+		- Batch gradient descent:	  
+		  		_ the term batch refer to the fact that every time we update we sums all the training example,
+				  we are using the full trainin set, not only a part of the training set
+
+		_ Normal equation method:
+
+		   _ For this exemple we can use the normal equation but normal gradint descent wil scale better

@@ -1,0 +1,73 @@
+# # # # # # # # # # # # # # #
+#							#
+#		  Linear			#
+#		  Algebra			#
+#		  Review			#
+#							#
+# # # # # # # # # # # # # # #
+
+
+# Matrices and Vectors #
+
+  - Explanations:
+
+				_ Matrix: _ Rectangular array of numbers
+						  	   |-> Multi dimensional vector
+						  _ Dimension of matrix: number of rows (m) x number of columns (n)
+						       |-> E.g.: R{3 * 2}, R{4*3}
+
+						  _ A[i,j]: i{th} row, j{th}column
+
+						  _ E.g.: _ A = [[16,1,35],[23,5,17],[2,27,14]]
+						  		  _ A[2,1] = 5, A[1,3] = 35.
+
+				_ Vector: _ 1 dimensional Matrix
+				  		         |-> R{4}
+
+
+
+				_ Matrix Addition/Substraction:
+
+									_ you can only add matrix of same dimension
+									_ you just add to add each element with the same index to get the final matix
+
+
+				_ Scalar Multiplication/division:
+
+									_ You just multipli/divise each element byt the scalar number
+
+# Matrix Vector Multiplication #
+
+  		 		_ if a = matrix R{f*g}, b = vector R{d}, d need to be equal to g, and the result c = vector R{f}
+
+				  	 _ To get c[i], multiply A\'si{th} row with elements of vector b, and add them up
+
+					 _ E.g.: A=[[1,3],[4,0],[2,1]] B=[1,5] -> C=[16,4,7]
+
+				_ In our case, prediction matrix = training set matrix * parameters vector
+
+# Matrix Matrix Multiplication #
+
+  		 		_ Example:
+
+						_ A=[[1,3,2],[4,0,1]], B=[[1,3],[0,1],[5,2] -> c=[[11,10],[9,14]]
+						  	 |->A{m*n}            |->B{n*o}                 |-> C{m*o}
+
+# Matrix Multiplication Propeties #
+
+  		 		_ Not commutative: A * B != B * A
+
+				_ Associative: (A * B) * C = A * ( B * C) 
+
+				_ Identity Matrix I{n*n}, for n = 3, [[1,0,0],[0,1,0],[0,0,1]]
+				  		   A * I = I * A = A
+
+# Inverse and Transpose #
+
+  		  	  	_ Matrix inverse:
+								_ If A is an squared matrix (A{n*n}), A{-1}*A = I
+								  	   	  	 		 				  |-> Inverse of A
+				_ Matrix without inverse are singular/degenerate
+
+				_ Matrix Transpose = rotate by -45°
+				  		 - E.g.: A=[[34,26,76],[45,72,52],[23,87,25]], A{T}=[[34,45,23],[26,72,87],[76,52,25]]
