@@ -1,0 +1,70 @@
+# # # # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  	  #
+#								  #
+#    I N T R O D U C T I O N      #
+#								  #
+#								  #
+# # # # # # # # # # # # # # # # # #
+
+# Welcome #
+
+		Machine Learning:
+
+						- Grew out of work in AI
+
+						- New capability for computers
+
+		Examples:
+
+						- Database mining:
+									_ Large datasets from growth of automation/web
+									_ E.g., Web click data, medical records, biology, engineering
+
+						_ Applications can\'t program by hand,
+						  			_ E.g., Autnomous helicopter, handwriting regognitions, most of NLP, CV
+
+						_ Self-customizing programs
+						  			_ E.g., Amazon, Netflix product recommenations
+						_ Understanding human learning (brain, real AI).
+
+
+# Supervised Learning #
+
+  		Examples:
+					1 _ Predict house prising
+
+					2 _ Predict breast cancer
+		Techniques:
+
+					1 - Regression: (Discrete fonction ?)
+
+							_ Linear reggression ? Polynomial reggression ?
+
+
+					2 _ Classification (Discrete value output ?)
+
+							_ Type 0 or 1 ?  Type 0 .... x ?
+
+					;; HOW TO DEAL WITH INFINITE NUMBERS ? SUPPORT VECTOR MACHINE
+
+
+#  Unsupervised Learning #
+
+
+   		Examples:
+
+					1 _ Predict breast cancer, Google News, Genome
+
+					1 _ Organize computing clusters, Social network analysis,
+					  			 Market segmenttion, Astronomical data analysis
+
+					2 _ Cocktail Party problem (example: separate 2 voice from the same audio file)
+		Techniques:
+
+
+					1 _ Clustering (data aren\'t classified and the algorithm clusters data)
+
+					2 _ Cocktail Party Algorythm ;;;CQFD
+
+					;; [W,s,v] = svd((repmat(sum(x.*x,1),size(x,1),1).*x)*x'); (Octave ?)
+					;;           |-> singular value decomposition
