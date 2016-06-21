@@ -1,0 +1,88 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#		Multivariate		  #
+#			Linear			  #
+#		 Regression			  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+
+# Multiple Features #
+
+  - Rappel:
+			_ hypothesis: h[theta](x) = theta[0] + theta[1] * x = y 
+
+
+
+  - Notation:
+
+			_ n = number of features
+
+			_ x{i} = input (features) oth i{th} training example
+
+			_ x[j]{i} = value of feature j in i{th} training exemple
+
+
+
+  - Goal:
+			_ Find the best hypothesis for : h[theta](x) = theta[0] + theta[1]x[1] + .... + theta[n]x[n] = theta{T}*X
+
+			_ x[0] = 1
+
+
+
+# Gradient Descent for Multiple Variables #
+
+
+  - Explication:
+					_ New algorithm for gradient descent:
+														  _ Repeat {
+
+														     theta[j] := theta[j] - (alpha * 1/m) (( m ∑ i = 1) (h[theta](x{i}) - y{i}) * x[j]{i})
+
+														  }           (simultaneously update theta[j])
+
+
+
+
+# Gradient Descent in Practice I: Features Scaling #
+
+
+  -  Make sure features are on a similar scale to converge faster:
+	
+	   	 	  	   			_ Eg: _ x1 = size (0-2000), x2 = nbr (1-5) = BAD
+							  	  _ x1 = size (0-1), x2 = nbr (0-1) = GOOD
+
+							_ How to feture scaling : _ x = (value - average_value) / range_value
+
+							_ You want to get every feature into approximately a -1 <= x[i] <= 1 range
+								  	 	_ 1 <= x <= 1 Good
+										_ 100 <= x <= 100 Bad
+										_ 0.001 <= x <= 0.001 Bad
+
+
+
+# Gradient Descent in Practice II: Features Scaling #
+
+  	- Make sure gradient descent is working correctly by selecting a good learning rate (alpha):
+
+	  	   				 _ Plot -> nbr of iterations (x) * minimize J(theta) (y)
+
+						 _ Declare convergence if J (theta) update less than 10{-3}
+
+						 _ for sufficiently small x, J(theta) should decrase on every iteration
+
+						 _ but if alha is too small, gradient descent can be slow to converge
+
+						 _ If alpha is too large, J(theta) may not decrease on each iteration,
+						   	  it may not converge and even diverge
+
+# Features and Polynomial Regression #
+
+
+  	_ Explaination:
+						_ if your hypothesis dont fit your data, you may use squared or quadratic function:
+
+						  	 	  			 _ theta[0] + theta[1] * x + theta[2] * x{2}
+											 _ theta[0] + theta[1] * x + theta[2] * x{2} + theta[3] * x{3}
+		
