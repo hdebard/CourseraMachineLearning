@@ -1,0 +1,78 @@
+# # # # # # # # # # # # # #
+# 	  	  	  	  	  	  #
+#		Neural			  #
+#		Network			  #
+#						  #
+#						  #
+# # # # # # # # # # # # # #
+
+
+# Model Representation I #
+
+  _ Neuron:
+		  _ Dentrite <-- Input wires
+
+		  _ Nucleus <-- body of the cell
+  						which do computation
+
+		  _ Axon <--- output wire
+
+  _ Network:
+
+		  _ All neurons communicate, share and
+		  	compute information
+
+
+  _ Graphic...:
+
+           
+			####
+		   # x1 # #
+		   #    #  #
+			####    #           output wire						
+					  #   # # #    |					         |--> weight
+			####	    #  a1  #   |							 |
+		   # x2 # # # # #      # # # # #> h[theta](x) = 1/(1+e{-theta{T}}x)
+		   #    #		# # # #           |
+			####       #		 #        |--> Sigmoid (logistic) activation function
+				     #			   #
+			####   #				#
+	|--    # x3 # # |-> input wire
+	|	   #    #					 #
+  a{1} = x	####					 #
+			
+			###						 #
+		   # x0# # # # # # # # # # # #
+		   #   #
+		    ###  <--- bias unit/neuron = 1
+											|->aka deep neurol network
+			I will not draw the multy layer multi connected neuronal network
+			for life reason ;-)
+
+  _ Notation:
+
+			_  a[i]{j} <-- activation of unit i in layer j
+			_  theta{j} <-- matrix of weights conrolling function
+			   			    maping from layer j to layer j + 1
+
+			_ a[1]{2} = g( theta[10]{1} * x[0] + ... + theta[13]{1} * x[3])
+			            |-> sigmoid
+			_ If network has s[j] units in layer j, s[j+1] units in layer j + 1, then
+			  theta{j} will be of dimension s[j+1] * (s[j] + 1)
+			  		   		   	  				   |--> dfk
+
+# Model Representation II #
+
+  _ Notation:
+
+		_ a[1]{2} = g(z[1]{2})
+
+
+		_ x = [x0, x1, x2, x3], z{2} = [z[1]{2}, z[2]{2}, z[3]{2}]
+
+		_ z{2} = theta{1} * x
+
+		_ a{2} = g( z{2} )
+		  |	   	 |	|-> R{3}
+		  |		 |-> sigmoid/activation function
+		  |-> R{3}

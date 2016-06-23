@@ -1,0 +1,15 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#		 Logistic			  #
+#		Regression			  #
+#		  Model				  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+
+
+# Cost Function #
+
+  _ Rappel:
+
+			_ h[theta](x) = 1/(1 + e{-theta{T}x})

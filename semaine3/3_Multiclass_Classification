@@ -1,0 +1,19 @@
+# # # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  	#
+#			Multiclass			#
+#		  Classification		#
+#								#
+# # # # # # # # # # # # # # # # #
+
+
+# Multiclass Classification: One-vs-all #
+
+  _ Examples:
+			_ Email foldering/tagging: Work, Friends, Family, Hobby
+			_ Medical diagrams: Not ill, Cold, Flu
+			_ Weather: Sunny, Cloudy, Rain, Snow
+
+  _ if we have 3 class:
+
+  	   _ we need 3 hypothesis: h{i}[theta](x);
+

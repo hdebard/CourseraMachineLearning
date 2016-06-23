@@ -1,0 +1,57 @@
+# # # # # # # # # # # #
+# 	  	  	  	  	  #
+#	  Application	  #
+#					  #
+# # # # # # # # # # # #
+
+
+# Exemple and intuition I #
+
+  _ Example:
+
+			_ Non-linear classification example
+
+								#
+								#   b   a a a
+								# b b b a a a   
+								#   b     b
+								# a a a b b b
+								# a a a   b
+							###################
+
+					_ y = x[1] XOR x[2]
+					      x[1] XNOR x[2]
+						  NOT (x[1] XOR x[2])
+
+   _ Simple example: AND
+
+
+   	 	_ x1, x2 E {0, 1}   |-> theta[1]{0}
+		_ y = x1 and x2     |               |-> input 2 from input layer (layer 0)
+		_ h[theta](x) = g(-30 + 20x[1] + 20x[2])
+		  			  	   |     |       |->theta[1 2]{1}
+						   |	 |-> theta[1 1]{1}
+						   |-> theta[1 0]{1}    |-> layer 1
+						             | x <- bias
+									actual neuron
+
+
+
+# Example and Intuition II #
+
+
+  _ Goal --> Compule XNOR with neural network
+
+
+  		     _ this part have been delete, you may calcul xnor.
+			   (tips, first write, and, not, or neural network,
+			   then use these 3 and with one hidden layer in your
+			   neural network to  make XNOR)
+
+# Multiclass Classification #
+
+  _ E.g.: OCR <- character recognition
+
+  _ Multiple output units: One-vs-all
+
+  _ We need to calcul h[theta](x) = [w,t,f,b] 

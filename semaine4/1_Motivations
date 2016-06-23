@@ -1,0 +1,73 @@
+# # # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  	#
+#								#
+#		  Motivations			#
+#								#
+#								#
+# # # # # # # # # # # # # # # # #
+
+
+# Non-linear Hypotheses #
+
+
+
+  _ Non-linear Classification:
+
+
+  			   _ Classification problem:
+
+			   	 		_ Will the house been sell in the next weeks ?
+
+						   _ Logistic regression:
+
+						  	   _ If we have many features, if you had quadratic terms
+							   	 you will get a lage nbr of parameters and you will
+								 overfitting.
+
+							   _ you can try to include less quatratric:
+							   	 	 _ only suare parameters but you will
+							   	 	   not have enough term to fit the data
+
+									 _ only cubic term, you will have too many terms
+
+				_ Exemple: 
+
+				  		  _ computer vison, is the picture is a car ?
+				  		   	 	_ the computer only compute pixels
+								_ 50 * 50 pixel = 2500
+								_ vector x {2500} with value between 0-255
+				
+								_ If we use our regression model,
+								  we will have (x[i] * x[j]) quatric features
+								  	 	  	   |-> 3 million in these case
+											   	   |-> seems legit to calcul
+												   	   	|-> never go full retard pls
+
+	_ Resume:
+				_ you can't calcul hypotethis for complex problem like computer vision
+				  	  			   		 |->CQFD	  
+				_ Neural Network are way better <--- CQFD
+				  		 		 	CQFD ---|--> CQFD
+										   CQFD
+
+# Neurons and the Brain #
+
+  _ Origins:
+
+		_ Mimic the brain
+
+		_ Widely 80s-90s then diminished because
+		   --->>> computationally expensive
+
+  _ Representation:
+
+		_ to mimic the brain we will need a lot of different
+		  piece of algorythm <--- False
+
+		_ The brain have just "one lerning algorythm"
+
+		  	  		_ Exemple: if you use audition region of the brain and <-----deal with it
+					  		   you cut the audition cable and put the vision cable,
+							   these part of the brain will learn to see and
+							   you will see like you were seing before
+

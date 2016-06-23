@@ -1,0 +1,106 @@
+# # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	#
+#		Solving				#
+#		The	Problem			#
+#		Of overfitting		#
+#							#
+# # # # # # # # # # # # # # #
+
+
+# The Problem of verfitiing #
+
+  _ Linear Regression:
+  	  _ Problems:
+
+			_ Underfit, High bias (linear line that not fit the data)
+			  |-> theta[0] + theta[1]x
+
+			_ Just right: theta[0] + theta[1]x + theta[2]x{2}
+
+			_ Overfitting, High variance 
+			  |-> theta[0] + theta[1]x + theta[2]x{2} + theta[3]x{3} + theta[4]x{4}
+
+
+	  _ Recap: _ Overfitting: If we have too many features, the learned hypothesis
+  		   	 may fit the training set very well (J(theta) = 0), but fail
+			 to generalize to new examples.
+
+   _ Logistic Regression:
+
+
+   	 	    _ Underfit, no enough terms
+
+			_ Just right: 
+
+			_ Overfitting, too many polynomial terms
+
+
+   _ Solution:
+
+			_ Plotting
+
+			_ Reduce the number of features (Be carefull which featare are importnt or not)
+
+			_ Regularisation, so each feature have more or less impact
+
+# Cost Function #
+
+  _ Regularization:
+
+		_ Small values for parameters
+			_ "Simpler" hypothesis
+			_ Less prone to overfitting
+
+  _ Example:
+
+		_ Housing:
+			_ Features: x[1],x[2],...,x[n]
+			_ Parameters: theta[0], theta[1], theta[2], ..., theta[n]
+
+			_ J(theta) = (1 / 2m) ((m sum i=0)(h[theta](x{i}) - y{i}){2} + (lambda (n sum i=1) theta[j]{2} ) )
+			  		   	 	  	  	  	  					  			   	|	   	  |-> ~= theta[0]
+																			|		  	  |-> !=
+																			|-> regularization parameter
+
+  			_ with the regularization, the line will not fit the data perfectly but
+			  will get be more accurate to generalize
+
+			_ If the regularization parameter is too big, you may underfit
+
+# Regularized Linear Regression #
+
+  _ Gradient descent:
+
+   			 _ Repeat {
+
+			   	theta[j] := theta[j] - alpha ((1/m) ( (m sum i=1)(h[theta](x{i}) - y{i})x[j]{i} + ( (lambda/m) theta[j]) ) ) 
+			 } |-> +-= to theta[j] := theta[j] * (1- alpha *theta /m)- alpha ((1/m) ( (m sum i=1)(h[theta](x{i}) - y{i})x[j]{i}) 
+			   	   	   	  		   	  		   	 	 |-> < 1
+
+  _ Normal equation:
+
+  		    _ formula: theta = (X{T} X){-1} X{T}y
+
+			_ Regularization: theta = (X{T} X + lambda){-1} X{T}y
+
+			_ E.g.: _ if n = 2 -> lambda = [0 0 0; 0 1 0; 0 0 1]
+
+  _ Non-invertibility:
+
+		_ Suppose m <= n:
+
+		  		  _ theta = (X{T} * X){-1} * X{T} * y
+				  		  		 |
+								 |-> non-invertible / singular / degenerate
+				  _ pinv() give a bad result
+
+				  _ If we had lambda, the matrix may become invertible
+				  	   	  	|-> theta = (X{T} * X * lambda){-1} * X{T} * y
+
+# Regularized Logistic Regression #
+
+  _ Same ad regularized linear regression except for the hypothesis
+
+  _ Advanved optimization:
+
+  			 _ functio [jVal, gradient] = costFunction(theta)

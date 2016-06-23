@@ -1,0 +1,101 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#		 Logistic			  #
+#		Regression			  #
+#		  Model				  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+
+
+# Cost Function #
+
+  _ Rappel:
+
+			_ h[theta](x) = 1/(1 + e{-theta{T}x})
+
+  _ Quesion:
+
+			_ How to choose parameters theta ?
+
+
+  _ Explanation:
+
+			_ Our representation is non-convex, and we need a convex representation.
+
+
+			  	  	_ E.g.:        non-convex                                         convex
+
+                        #                                                    #
+						#	#                                 #              #   #                    #
+						#	 #   #                           #               #    #                  #
+						#	   #  #                     #   #                #     #                #
+						#	   	    #   #         #   #  # #                 #       #            #
+						#			  #   #      #  #                        #         #        #
+						#			       #   #                             #            # # #
+						#				     #                               #
+					##############################################         ################################
+                        #       |-> lot of local minimum                     #        |-> one global minimum
+
+
+										-log(h[theta](x))    if y = 1
+			_ Cost(h[theta](x),y) = {
+										-log(1-h[theta](x))   if y = 0
+
+
+			_ cost = 0 if y = 1, h[theta](x) = 1
+
+# Simplified Cost Function and Gradient Descent #
+
+
+
+  _ Rappel:
+
+			- Equation:
+						_ J(theta) = (1/m) * ((m sum i = 1) ( Cost(h[theta](x{i}), y{i}) ) )
+
+
+
+
+			- Cost for simple example				-log(h[theta](x))    if y = 1
+						_ Cost(h[theta](x),y) = {
+											  		-log(1-h[theta](x))   if y = 0
+
+
+
+
+
+  _ Representation:
+
+					_ Cost(h[theta](x), y) = -y log (h[theta](x)) - (1- y) log (1 - h[theta](x))
+
+
+
+
+  					_ Gradient Descent:
+
+
+					  		   - J(theta) = ( -1 / m) [ (m sum i=1) (y{i} log h[theta](x{i}) + (1- y{i}) log(1 - h[theta](x{i}))) ]
+
+
+
+							   _ Want min[theta] J(theta) :
+							   	 
+									Repeat {
+											theta[j] := theta[j] - alpha (d / (d *theta[j])) J(theta)
+									}              ( simultaneously update all theta[j] )
+
+								_ Gradient descent equatin for logistic regression is the same,
+								  but our hypothesis has change from h[theta](x) = theta{T}x to h[theta](x) = 1/(1 + e{-theta{T}x}).
+
+
+								_ theta := theta - alpha ( 1 / m ) ((m sum i =1) [(h[theta](x{i}) - y{i}) x{i}]
+
+ # Advanced Optimization #
+
+   _ Other algorythm: Conjugate gradient, BFGS, L-BFGS
+
+
+
+   _ Octave:  >> options = optimset('GradObj', 'on', 'MaxIter', '100');
+   	 		  >> initialTheta = zeros(2,1)

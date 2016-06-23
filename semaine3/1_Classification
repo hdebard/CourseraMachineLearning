@@ -1,0 +1,43 @@
+# # # # # # # # # # # # # #
+# 	  	  	  	  	  	  #
+#		Classification	  #
+#			and			  #
+#		Representation	  #
+#						  #
+# # # # # # # # # # # # # #
+
+# Classification #
+
+  _ Methode:   _ logistic regression
+
+
+  _ Example:  _ Email Spam/ Not spam ?
+  			  _ Onine Transactions: Fraudulent (Yes/No)
+			  _ Tumor: Malignant / Begnin ?
+
+			  _ y E {0,1} - 0 : Negative class
+			  	  		  - 1 : Positive Class
+
+  _ hypothesis:
+				_ h(theta) = theta{T} * x
+
+				_ Threshhol clasifier output h[theta](x) at 0.5
+
+# Classification Represenation #
+
+  _ hypothesis:    _ h[theta](x) = g(theta{T}x)
+
+  				   	 			   |-> g = sigmoid function g(z) = 1/(1+e{-z})
+								   	   	   |-> logistic function
+
+					_ h[theta](x) = 1/(1+e{-theta{T}x})
+
+  _ Intepretation: 
+  				    _ h[theta](x) = estimated probability (between 0 and 1) that y = 1
+					  			  			  |-> en fonction ?
+  				   	_ h[theta](x) = P( y= 1 |x; theta )
+					  			  	        |-> pour tout x
+
+# Decision Boundary #
+
+  _ The decision boundary is the line clustering each class.
