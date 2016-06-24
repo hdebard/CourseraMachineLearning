@@ -1,0 +1,39 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#		Cost Function		  #
+#			and				  #
+#		Backpropagation		  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+# Cost Function #
+
+
+  _ Topic:
+			_ Neural Network (Classification):
+
+			  	_ Notation:
+
+					_ L = total nbr of layers in nNetwork
+
+					_ s[l] = nbr of unit in layer l (without bias)
+
+				_ Type:
+
+				    _ Binary classifiction: _ S[L] = 1
+
+
+					_ Multi-class classification: _ h[theta](x) ∈ R{K}
+																	|-> K >= 3
+			
+
+			_ Cost function:
+
+
+	_ Logistic regression: J(Θ) = -(1/m) * [(m ∑ i) y{i} * log *h[Θ] + (1- y{i}) log * (1 - h[Θ](x{i}))] + (lambda/(2m)) (n∑j) Θ[j]{2} 
+
+
+
+	_ Neural network:
+	(K∑k)
+	  	_ J(Θ) = -(1/m) * [(m ∑ i)(K∑k) y[k]{i} * log(h[Θ])[k] + (1- y[k]{i}) log(1 - (h[Θ](x{i}))[k])] + (lambda/(2m)) (L-1∑l)(s[l]∑i)(s[l]+ 1∑j) (Θ[ji]{l}){2} 

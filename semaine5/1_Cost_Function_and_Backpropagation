@@ -1,0 +1,108 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#		Cost Function		  #
+#			and				  #
+#		Backpropagation		  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+# Cost Function #
+
+
+  _ Topic:
+			_ Neural Network (Classification):
+
+			  	_ Notation:
+
+					_ L = total nbr of layers in nNetwork
+
+					_ s[l] = nbr of unit in layer l (without bias)
+
+					_ ∑
+					_ Θ
+					_ ∈
+				_ Type:
+
+				    _ Binary classifiction: _ S[L] = 1
+
+
+					_ Multi-class classification: _ h[theta](x) ∈ R{K}
+																	|-> K >= 3
+			
+
+			_ Cost function:
+
+
+	_ Logistic regression: J(Θ) = -(1/m) * [(m ∑ i) y{i} * log *h[Θ] + (1- y{i}) log * (1 - h[Θ](x{i}))] + (lambda/(2m)) (n∑j) Θ[j]{2} 
+
+
+
+	_ Neural network:
+
+		_ h[theta](x) ∈ R{K}     (h[theta](x)[i] = i{th} output)
+
+	  	_ J(Θ) = -(1/m) * [(m ∑ i)(K∑k) y[k]{i} * log(h[Θ])[k] + (1- y[k]{i}) log(1 - (h[Θ](x{i}))[k])] + (lambda/(2m)) (L-1∑l)(s[l]∑i)(s[l]+ 1∑j) (Θ[ji]{l}){2} 
+
+
+# Backpropagation Algorithm #
+
+  _ Rappel:  Δ Δ Δ Δ Δ Δ Δ Δ
+
+  		_ Neural network:		  
+			_ h[theta](x) ∈ R{K}     (h[theta](x)[i] = i{th} output)
+	  		_ J(Θ) = -(1/m) * [(m ∑ i)(K∑k) y[k]{i} * log(h[Θ])[k] + (1- y[k]{i}) log(1 - (h[Θ](x{i}))[k])] + (lambda/(2m)) (L-1∑l)(s[l]∑i)(s[l]+ 1∑j) (Θ[ji]{l}){2} 
+
+
+  _ Goal:
+			_ minimize J(Θ) using backpropagation method
+			  and gradient descent algorithm
+
+
+		    _ Need code to compute:
+			  	   _ J(Θ)
+				   _ (d/(d Θ[ij]{l})) J(Θ)
+				   _ Θ[ij]{l} ∈ R
+
+
+
+  _	Gradient descent computation:
+
+  			 _ Given one training example (x,y):
+
+			   		 _ Forward propargation:
+
+					   		   _ a{1} = x -> z{2} = Θ{1}a{1} -> a{2} = g(z{2}) -> z(3) = Θ{2}a{2} -> a{3} = g(z{3}) -> z{4} = Θ{3}a{3} -> a{4}h[Θ](x) = g(z{4})
+
+
+
+			_ Given (s[l] number of unit in layer l): s[1] = 3, s[2] = 5, s[3] = 5, s[4] = 4
+
+					_ Backpropagation algorithm:
+
+
+					  		   _ Intuition: delta[j]{l} = "error" of node j in layer l
+
+							   _ For each output unit (layer L = 4):
+
+							   	 	 	  _ delta[j]{4} = a[j]{4} - y[j           
+
+										  _ delta{3} = (Θ{3}){T}.*g'(z{3})   <--- WHERE IS J NEO? we are in the matrix now dumbass
+										  			   			  |--> a{3}.*(1-a{3})
+										  _ delta{2} = (Θ{2}){T}.*g'(z{2})
+
+						-> 	_ Training set {(x{1},y{1}), ... , (x{m}, y{m})}
+
+							_ Set Δ[ij]{l} = 0 (for all l,i,j)
+
+							_ For i = 1 to m
+							  	  _ Set a{1} = x{i}
+							  	  _ Perform FP to comput a{l} for l = 2,3,...,L
+							  	  _ Using y{i}, copute delta{L} = a{L} - y{i}
+							  	  _ Compute delta{L-1}, delta{L-2}, ..., delta{2}
+								  _ Δ[ij]{l} := Δ[ij]{l} + a[ij]{l}delta[i]{l+1} ---> Matrix = ->>> Δ{l} := Δ{l} + delta{l+1} (a{l}){T}
+							_ D[ij]{l} := (1/m) Δ[ij]{l} + lambda * Θ[ij]{l}    ,if j != 0
+							_ D[ij]{l} := (1/m) Δ[ij]{l}                        ,if j = 0
+
+
+# Backpropagation intuition #
+
