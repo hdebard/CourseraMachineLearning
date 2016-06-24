@@ -1,0 +1,109 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#		Backpropagation		  #
+#			in				  #
+#		Practice			  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+# Implementation note: Unrolling Parameters #
+
+
+  _ Advanced optimization:
+
+
+  			 >> function [jVal, gradient] = cost Function(theta)
+
+			 >> optTheta = fminunc(@costFunction, initialTheta, options)
+
+			 _ Now theta and gradient are no more vector, but matrice.
+
+			 _ But we can pack them as vector of vector
+
+			 >> Theta1 = ones(10,11)
+			 >> Theta2 = 2*ones(10,11)
+			 >> Theta3 = 3*ones(1,11)
+			 >> thetaVec = [ theta1(:); Theta2(:); Theta3(:)];
+			 >> reshape(thetaVec(1:110), 10,11) <--- Theta1 matrix
+			 >> reshape(thetaVec(111:220), 10,11) <-- Theta2 matrix
+			 >> reshape(thetaVec(222:330), 10,11) <-- Theta3 matrix
+
+  _ Learning Algorithm:
+
+  	_ Have initial parameters Θ{1},Θ{2},Θ{3}
+	_ Unroll to get iitialTheta to pass to
+	_ fminunc(@costFunction, initialTheta, options)
+
+	_ function [jVal, gradientVec] = costFunction (thetaVec)
+	  _ From thetaVec, get Θ{1},Θ{2},Θ{3}    (reshape)
+	  _ Use forward prop/ back prop to compute D{1}, D{2}, D{3} and J(Θ)
+	  _ Unroll D{1}, D{2}, D{3} to get gradientVec
+	  	|--> derouler
+
+
+  _ Its better to deal with matrice for for/back prop and use Suport Vector Machine
+  _ But for using complexe optimizatio nalgorithm they expect that all is in a big long vector
+
+
+# Gradient Checking #
+
+  _ the gradient check enable to check our algorithm
+  	is acting corectly and computing the derivative
+
+	  _ we compute the approximate derivative using theta + epsilon and theta - epsilon
+	    and verify that our gradient is between these 2 value
+      >> gradApprox = (J(theta + EPSILON) - J(theta - EPSILON)) / (2 * EPSILON)
+
+  _ Implementation Note:
+
+  		_ Implement backprop to compute DVec (Unrolled D{1}, D{2}, D{3})
+		_ Implement numerical gradient check to compute grdApprox
+		_ Make sure they give a similar values
+		_ turn off gradint checking. Using backprop code for lerning
+
+  _ Important:
+
+  	  _ Be sure to disable your gradient checking code before training
+	    your classifier. If you run numerical gradient computation on
+		every iteration of gradient descent (on in inner loop of
+		costFunction(..)) your code will be VERY slow
+
+# Random Initialization #
+
+  _ Initial value of Θ:
+
+  		_ Zero initialization:
+
+  			_ Set initialTheta = zeros(n,1) work with logistic regression
+			  but dont work with neural network because if you do this
+			  all activation of hiddens units will be the same
+			  and all delta will be the same to.
+			  = Redundante
+
+		_ Random initialization:
+
+		    _ Theta[n] = rand(10,11) * (2*INIT_EPSILON) - INIT_EPSILON;
+
+# Putting it together #
+
+
+  _ Topic:
+
+		_ Training a neural network:
+
+	   	  	_ Pick a network architecture:
+
+			 	  _ Nbr of input units: dimension of features x{i}
+				  _ Nbr of output units: Number of Classes
+				  _ Nbr of hidden layer:
+								_ Reasonable default: 1;
+								_ Same nbr of unit in each layer 
+
+		1	_ Randomly initialyze weights
+		2	_ Implement forward prop to get hΘ(x{i}) for any x{i}
+		3	_ Implement code to compute cost function J(Θ)
+		4	_ Implement backprop to compute partial derivatives d/dΘ[jk]{l}J(Θ)
+			_ iteratate (for loop) over each ttraining example
+		5   _ Use gradient checking to compare partial derivative, then disable it
+		6   _ Use gradient descent or advanced optimization method to minimize J(Θ)
+			_ J(Θ) - non-convex - (can be stuck in local minimum)

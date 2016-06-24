@@ -1,0 +1,29 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#		Backpropagation		  #
+#			in				  #
+#		Practice			  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+# Implementation note: Unrolling Parameters #
+
+
+  _ Advanced optimization:
+
+
+  			 >> function [jVal, gradient] = cost Function(theta)
+
+			 >> optTheta = fminunc(@costFunction, initialTheta, options)
+
+			 _ Now theta and gradient are no more vector, but matrice.
+
+			 _ But we can pack them as vector of vector
+
+			 >> Theta1 = ones(10,11)
+			 >> Theta2 = 2*ones(10,11)
+			 >> Theta3 = 3*ones(1,11)
+			 >> thetaVec = [ theta1(:); Theta2(:); Theta3(:)];
+			 >> reshape(thetaVec(1:110), 10,11) <--- Theta1 matrix
+			 >> reshape(thetaVec(111:220), 10,11) <-- Theta2 matrix
+			 >> reshape(thetaVec(222:330), 10,11) <-- Theta3 matrix
