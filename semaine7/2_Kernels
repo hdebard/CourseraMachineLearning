@@ -1,0 +1,31 @@
+# # # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  	#
+#								#
+#		    KERNELS				#
+#								#
+#								#
+# # # # # # # # # # # # # # # # #
+
+# Kernels I #
+
+  _ Topic:
+
+		_ Non-linear Decision Boundary:
+
+		  _ Notation:
+
+				_ f[j] = x[j]
+				_ l{i} = landmark ??
+
+
+# Kernels II #
+
+	    _ SVM Parameters:
+
+		  	  _ C ( = 1/m): - Large C: Lower bias, high variance,
+			  	  	  		_ Small C: Higher bias, low variance.
+
+			  _ sigma{2}: _ Large: Features f[i] vary more smoothly
+			  			  		   Higher bias, low variance. 
+			  			  _ Small: Features f[i] vary less smoothly
+						  		   Lower bias, high variance. 

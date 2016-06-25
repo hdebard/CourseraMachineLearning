@@ -1,0 +1,47 @@
+# # # # # # # # # # # # # #
+# 	  	  	  	  	  	  #
+#		   SVMs			  #
+#			in			  #
+#		  Practice		  #
+#						  #
+# # # # # # # # # # # # # #
+
+# Using An SVM #
+
+  _ Use a software package to sole parameters theta.
+
+  _ Need to specify:
+  		 _ Choice of parameter C
+		 _ Choice of kernel (similarity function)
+	->   _ No kernel, linear kernel
+	->	 _ Gaussian kernel:
+		   		_ Note: Do feature scaling before using the GK
+
+		 _ Other kernel:
+		   		 _ Polynomial kernel: (X{t}l + const){degree} 
+				 _ String kernel, chi-square kernel, histogram
+				   intersection kernel.
+
+  _ Multi class classification:
+
+  		  _ Use package with builtin.
+		  _ Use one.vs.all method.
+
+
+  _ Logistic regression vs. SVMs:
+
+
+  			 _ Notation:
+			   _ n = nbr of features
+			   _ m = nbr of training examples
+
+			 _ If n is large: lr or svm without kernel
+
+			 _ If n is small, m intermediate: svm with gaussian kernel
+
+			 _ If n is small, m is large: add more featuresand use lr or svm without kernel
+
+
+			 _ Better use NN but it is slower to train.
+
+			 _ No local optima with SVM.

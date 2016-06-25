@@ -1,0 +1,62 @@
+# # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	#
+#		   Large			#
+#		  Margin			#
+#		Classification		#
+#							#
+# # # # # # # # # # # # # # #
+
+
+# Optimization Objective #
+
+
+  _ Topic:
+		  _ Alternative view of logistic regression:
+
+		    		_ h[theta](x) = 1/(1+e{-theta{T}x})
+					  											|-> much bigger
+					_ If y = 1, we want h[theta](x) =~ 1, O{T}x >> 0
+		  	   	 	   	   	 	   					|-> environ
+
+					_ If y = 0, we want h[theta](x) =~ 0, O{T}x << 0
+
+
+					_ Andrew in drawing straight line fitting curve of
+					  logistic regression function, this is supposed
+					  to be the SVM. 
+
+		  _ Support Vector Machine Algorithm:
+
+		  			_ CAHIER
+
+# Large Margin Intuition #
+
+  _ Cahier.
+
+  _ Topic:
+
+		_ What is Large margin.
+
+		_ How to use SVM.
+
+  _ SVM decision Boundary:
+
+  		_ Linearly separable case.
+
+
+# Large Margin Classification #
+
+  _ Topic:
+
+		_ Vector Inner Product:
+
+
+		  		 _ Projection of one vecto on an other ?
+
+
+		_ SVM Decision Boundary:
+
+		  	  	 _ Awazegaga
+
+
+
