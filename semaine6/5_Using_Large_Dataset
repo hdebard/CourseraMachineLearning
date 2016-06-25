@@ -1,0 +1,55 @@
+# # # # # # # # # # # # # #
+# 	  	  	  	  	  	  #
+#		Using			  #
+#		Large			  #
+#		Dataset			  #
+#						  #
+# # # # # # # # # # # # # #
+
+
+# Data For Machine Learning #
+
+
+ _ Goal:
+		_ Designing a high accuracy learning system
+
+
+ _ Example:
+
+		_ Classify between confusable words.
+
+		_ Algorthim:
+
+			_ Percepton (Logistic regression)
+
+			_ Winnow
+
+			_ Memory-based
+
+			_ Naive Bayes
+
+
+  _ Quote: _ "It's not who has the best algorithm that wins.
+  		   	 	   	   	   It's who has the most data."
+
+
+  _ Large data rationale:
+
+  		  _ Assume feature x has sufficient information to
+		  	predict y accurately.
+
+		  _ x has not always sufficient information.
+
+		  _ given feature x, can human expert confidently predict y ?
+
+
+
+		_ Use a learning algorithm with many parameters (logistic/linear reggression
+		  with many features; neural network with many hidden units) <-- low bias algorithm
+		  	   --> J[train](theta) will be smal
+
+		_ Use a very large training set (unlikely to overfit) <-- low variance
+		  	   --> J[train](theta) almost equat to J[test](theta)
+
+
+		|--->  Using these two method, J[train](theta) will be small

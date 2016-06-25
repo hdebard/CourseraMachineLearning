@@ -1,0 +1,74 @@
+# # # # # # # # # # # # # #
+# 	  	  	  	  	  	  #
+#		Building		  #
+#			a			  #
+#	 Spam classifier	  #
+#						  #
+# # # # # # # # # # # # # #
+
+# Prioritizing what to Work on #
+
+  _ Example:
+
+		_ Supervised learning:
+
+		  	_ x = features of email.
+			_ y = spam (1) or not spam (0)
+
+			_ choose 100 words indicative of spam/ not spam.
+			  		 (deal, buy, discout, andrew, now)
+
+
+			_ X = [0, 1, 0, 1, 0, ..., 1, ...], X appartient R{100}
+			  	      |->buy|  |-> discount
+					  		|-> deal
+
+			_ Note: In pratice, take most frequently occuring n word(10.000-50.000)
+			        in training set, rather than manually pick 100 work
+
+		_ How to spend your time to make it have low error ?
+		  	  _ Collect lots of data:
+			  	_ E.g. "honeypot" project (get spammed to train your algorithm)
+			  _ Develop sophisticated features based on email routing
+			    information (from email header).
+			  _ Develop sophisticated features for message body, e.g should
+			    "discount" and discounts be treated as the same word ? How
+				about "deal" and "dealer" ? Feature about punctuation?
+			  _ Develop sophisticated algorithm to detect misspellings
+
+			  _ Randomly choose is not a bad option in these case
+
+# Error analysis #
+
+  _ Recommended approach:
+
+  	_ Start with a simple algorithm that you can implement quickly.
+	  Implement it and test it on your cross-validation data.
+	_ Plot learning curves to decide if more data, more features, etc
+	  are likely to help
+	_ Error analysis: Manually examine the examples ( in cross validation set)
+	  that your algorithm made errors on. See if you spot any systematic trend
+	  in what type of examples it is making errors on.
+
+  _ Error Analysis:
+
+  		 _ 1: What type of email it is
+		 _ 2: what features you think would have
+		      helped your algorithm classify them correctly
+
+  _ The importance of numerical evaluation:
+
+  		_ Exemple: 
+
+		  		 _ Should discount/discounts/discounted/discounting
+		  		   be treated as the same word ?
+				 _ Can use "stemming" software ?
+
+				 _ Error analysis may not be helpful for deciding if it
+				   is likely to improve perfomance. Only solution is to try it
+				   and see if it work.
+				 _ Need numerical evaluation of algorithm's perfomance with and
+				   without stemming.
+				 _ Distinguish upper vs. lower case or not ?
+
+# # # ## # # # # ## # ## ### ## # # # ## # # # # # # # # # # # # ## # ## # # ## ## # # ## # # # # # # # # # # # # # # # # # ## # # ### # # # #

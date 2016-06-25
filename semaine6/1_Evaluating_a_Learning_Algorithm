@@ -1,0 +1,72 @@
+# # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	#
+#		Evalutating a		#
+#		  Learning			#
+#		  Algorithm			#
+#							#
+# # # # # # # # # # # # # # #
+
+
+# Deciding What To Try Next #
+
+  _ Debugging a learnin algorithm:
+
+  		_ Get more training examples
+
+		_ Try smaller sets of features
+
+		_ Try getting additional features
+
+		_ Try adding polynomial features
+
+		_ Try increasing/decreasing lambda
+
+  _ Machine learning diagnostic:
+
+  	_ A diagnostic is a test that you can rin
+	  to gain insight what is/isn't working
+	  and gain guidance as to how best improve
+	  it's perfomance
+
+	_ Diagnostic can take time to implement, but doing
+	  so can be good use of your time.
+
+# Evaluating a Hypothesis # 
+
+  _ Evaluating your hypothesis:
+
+  		_ How to evaluate if hypothesis is overfitting:
+
+		  	  _ Plot the hypothesis h(x) if small nbr of features
+
+			  _ Split the training set (mini-batch ?) to have
+			    a training set and a test set. (shuffle, 70%-30%)
+
+# Model Selection and Train/Validation/Test Sets #
+
+
+  _ Overfitting example:
+
+  		  _ the error of the parameters in the training set
+			is likely to be lower than the actual generalization
+			model.
+
+
+  _ Model Selection:
+
+  		  _ Which degree of polynomial you want to use ?
+
+		  	_ Test different model a save the theta{i} vector
+			  then see the performance of these thetas on test set
+
+		    _ If you choose the polynomial in function of you test set
+			  you are not objective again, you may fail to generalize.
+
+  _ Evaluating your hypothesis:
+
+  		_ Split the training set in 3 category:
+
+		  	_ training set, cross validation set, test set (60%,20%,20%)
+
+			_ now you can choose your polynomial during your CV set and
+			  check your hypothesis on the test set.

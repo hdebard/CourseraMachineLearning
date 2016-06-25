@@ -1,0 +1,59 @@
+# # # # # # # # # # # # #
+# 	  	  	  	  	  	#
+#		Handling		#
+#		Skewed			#
+#		Data			#
+#						#
+# # # # # # # # # # # # #
+
+# Error Metrics for Skewed Classes #
+
+  _ Cancer classification example:
+
+    	_ Train logistic regression model h[theta](x)
+		_ Find that you got 1% error test set
+
+		_ Only 0.50% of patients have cancer
+		  	    |
+				|- - > Skewed classes
+
+     _ Precision/Recall:
+
+	    _ True/False positive, False/True negative, # number
+		
+		   _ Precision: TP/#predictedP = TP / (TP + FP)
+		   _ Recall: TP/#actualP = TP/ (TP + FN)
+
+   _ Solution:
+			_ High precision/recall is a good thing
+
+# Trading Off Precision and Recall #
+
+
+  _ Rappel:
+		  _ Logistic reggression: 0<= h(x) <= 1
+
+		  _ Predict 1 if h(x) >= 0.5
+
+		  _ Predict 0 if h(x) < 0.5
+
+  _ Trading: 
+  	  _ Suppose we want to predict y = 1
+  	    only if very confident
+		( 0.5 -> 0.7 -> 0.9 )
+			    _ Higher precision / Lower recall
+
+	  _ Suppose we want to avoid missing
+	    case (avoir false negative)
+		( 0.5 -> 0.7 -> 0.9 )
+			    _ Higher recall / Lower precision
+
+	  _ More generally: Predict 1 if h(x) >= threshold
+
+   _ F Score:
+
+   	 _ How to compare precision/recall numbers ?
+
+	   	   _ Average ? =  (P + R) / 2  <--- Bad Idea
+
+		   _ F Score ? = 2 * ((PR)/(P+R)) <-- Better Idea

@@ -1,0 +1,87 @@
+# # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	#
+#		   Bias				#
+#			vs				#
+#		 Variance			#
+#							#
+# # # # # # # # # # # # # # #
+
+
+# Diagnosing Bias vs Variance #
+
+  _ High Bias (Underfit):
+  		 _ J[train] will be high
+		 _ J[cv] will be hihg
+
+  _ High variance (Overfit):
+  		 _ J(train) will be low
+		 _ J(cv) will be bigger
+
+
+
+# Regularization and Bias/Variance #
+
+  _ Model:
+
+		  _ Large lambda: High bias, underfit
+
+		  _ Intermediate lambda: Just right
+
+		  _ Small lambda: High Variance, overfit
+
+  _ Choosing the regularization parameter lambda:
+
+  			 _ Compute the error without lambda
+
+			 _ try with lambda: 0, 0.01, 0.02, 0.04, 0.08,..., 10
+
+			 _ plot lambda / J(theta)
+
+
+# Learning curve #
+
+
+  _ Learning curves:
+
+  	_ High bias:
+	    	_ Plotting m (<-x) by error (<- y) for training set              <--- this should increase
+	  		  and cross validation set            <--- this should decrease
+			  	  				   		|--> NO GAP
+		-->	_ If a learning algorythm is suffering from high bias
+			  getting more training data will not (by itself) help much
+
+	_ High variance:
+	    	_ Plotting m (<-x) by error (<- y) for training set              <--- this should increase
+	  		  and cross validation set            <--- this should decrease
+			  	  				   		|--> big gap
+		-->	_ If a learning algorythm is suffering from high variance
+			  getting more training data  is likely to help
+
+# Deciding What to do Next Revisited #
+
+
+  _ Debugging a learning algorithm:
+
+  		_ Suppose you have implemented regularized linear regression
+		  to predict housing prices. However, when you test your hypothesis
+		  in a new set of houses, you find it makes unacceptably large errors
+		  in its prediction. What should you try next ?
+
+		  - Get more training examples   <--- fixes high variance
+		  - Try smaller sets of features  <--- fixes high variance (usually)
+		  - Try getting additonal features <--- fixes high bias (usually)
+		  - Try adding polynomial features <--- fixes high bias 
+		  - Try decreasing lambda <-- fixes high bias
+		  - Try increasing lambda <- fixes high variance
+
+  _ Neural networks and overfitting:
+
+  		   _ "small" neural network (low nbr of layer and unit in it)
+		   	 --> prone to underfitting
+			 --> computationally cheaper
+
+
+		   _ "Large" neural network (high nbr of layer and unit in it)
+		     --> prone to overfitting
+			 --> computationally more expensive
+			 --> use regularization (lambda) to address overfitting.
