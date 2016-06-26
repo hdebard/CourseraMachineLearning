@@ -1,0 +1,57 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#							  #
+#			Principal		  #
+#			Component		  #
+#			Analysis		  #
+#							  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+
+# PCA Problem Formulation #
+
+
+  _ PCA problem formulation:
+
+  		_ Example:
+
+		  _ we have 2 features x[1], x[2] that we can plot
+		  	on a 2D plane.
+
+        _ Goal:
+
+		  _ we need to compute the equation of the linear axe that fit/minimize
+			our data to use it as our new 1D plan.
+		  _ we use PCA to compute the equation.
+
+		  -->  Reduce from n-dimension to k-dimension: find k verctors u.
+
+		_ Notation:
+
+		  _ u{i} <-- projection vector thta minimize the distance with the data
+
+		  _ n <-- dimension/feature of the data
+		  _ K <--- dimension/feature of the compressed data
+
+  _ PCA is not linear regression:
+
+
+  		_ Explaination:
+
+			_ Linear regression:
+
+				_ we are minimizing the square error
+				  (Andrew drawing vertical line between the line and the data)
+
+				_ we are trying to predict y
+
+		    _ PCA:
+
+				_ we are minimizing the magnitude ?
+				  (Andrew drawing perpendicular line between the line and the data)
+
+				_ we are treating feature equally, symetrically.
+
+# PCA Algorithm #
+

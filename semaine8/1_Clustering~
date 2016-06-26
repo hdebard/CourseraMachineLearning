@@ -1,0 +1,79 @@
+# # # # # # # # # # # # #
+# 	  	  	  	  	  	#
+#						#
+#		Clustering		#
+#						#
+#						#
+# # # # # # # # # # # # #
+
+
+# Unsupervised Learning: Introduction #
+
+
+  _ Example:
+
+		_ Clustering Algorithm
+
+
+# K-Means Algorithm #
+
+
+  _ Algorithm Representation:
+
+  		  _ 0: Randomly initialize cluster centroids.
+
+		  _ 1: Assign each training data with a centroid
+
+		  _ 2: Move clustering centroids to the center of his group
+
+		  _ 3: repeat step 1 and 2.
+
+  _ Input for the algorithm:
+
+
+  		  _ K (number of clusters)
+
+		  _ Training set
+
+
+  _ Explaination:
+
+		  _ Randomly initialize K cluster centroid mu[1],mu[2], ..., mu[k] appartient R{n}
+
+		  _ Repeat {
+
+		           For i = 1 to m                <-- Cluster assignement step:    min[k] ||x{i} - mu[k]||{2}
+				   	   	 
+				   	   c{i} := index (from 1 to K) of cluster centroid closest to x{i}
+
+				   For k = 1 to K	 	   	 	 <-- Move centroid step:  Average of vector (m sum i = 1)x{i} = ector mu[k]
+
+				       mu[k] := average (mean) of points assigned to cluster k
+
+
+		  }
+
+		  _ If you have an error, reinitialize centroid or delete one centroid.
+
+
+  _ K-means for non-separated clusters
+
+  		_ Don't worry, it will work fine.
+
+# Optimization Objective #
+
+  	_ Notation:
+
+		_ c{i} = index of cluster to which example x{i} is currently assigned
+
+		_ mu[k] = cluster centroid k
+
+		_ mu[c{i}] = cluster centroid of cluster to which example x{i} has been assigned
+
+
+	_ Optimization objective:
+
+	  _ J(c{1}, ... c{m}, mu[1], ... , mu[K]) = 1/m ((m sum i = 1) ||x{i} - mu[c{i}]||{2})
+	  		|-> first lopp    |-> second loop
+	  _ K-means is trying to minimize J(..)
+

@@ -1,0 +1,34 @@
+# # # # # # # # # # # #
+# 	  	  	  	  	  #
+#					  #
+#	   Motivation	  #
+#					  #
+#					  #
+# # # # # # # # # # # #
+
+
+
+# Motivation I: Data Compression #
+
+  _ Goal: Reduce the computational power needed ? 
+
+  _ Data Compression:
+
+
+  		 _ Reduce data from 2D to 1D
+		   |-> use the linear line from the 2D plan to make a new plane ?
+
+		 _ Reduce data from 3D to 2D
+		   |-> same, projection the 3d data that are not on the
+		      principal 2D plane made by the rest of the data
+			  to get the new 2D plane ?
+
+# Motivation I: Visualization #
+
+  _ Goal: Visualize our data ?
+
+
+  _ Data vizualisation:
+
+  		 _ Combine our feature with dimensional reduction
+		   so we can plot our data on 2D planes.
