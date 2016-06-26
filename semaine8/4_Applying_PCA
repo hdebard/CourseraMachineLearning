@@ -29,6 +29,49 @@
 
 		_ Typically, choose k to be smallet value so that:
 
-		  			_ 1/2 <= 00.1
+		  			_3 1/2 <= 00.1
 
 		_ "99% of variance is retained"
+
+
+
+		_ [U,S,V] = svd(sigma)
+
+		_ for given k, this is equivalent from 3:
+
+		  	  _ (1 - (((k sum i = 1) S[ii])/ ((n sum i = 1) S[ii]))) <= 0.01 ?
+
+			  _ (((k sum i = 1) S[ii])/ ((n sum i = 1) S[ii])) >= 0.99 ?
+
+# Advice for Applying PCA #
+
+  _ Topic:
+
+  	  _ Supervised learning speedup:
+
+	  		_ Example:
+
+				_ Computer vision problem, x{m} belong to R{10.000}           (<-- LR, NN, SVM)
+				  	
+					_ Use pca may reduce x{m} belong to R{10.000} to z{m} belong to R{100}
+					  to test our training set, then after use it on Xcv and Xtest.
+
+
+	  _ Application of PCA:
+
+	  		_ Compression:
+
+			    _ Reduce memory/disk needed to store data
+				_ Speed up learning algorythm
+
+				  		_ Choose k by % of variance remain
+
+			_ Visualization:
+
+			    _ k=2 or k =3, or find a way to plot a 4D views :-D (Like a Thug)
+
+	  _ Miss Use:
+
+			_ To prevent overfitting. This is a bad use, its better tu use regularization
+
+			_ Include PCA in the list when you don't know what you are goingto deal with.
