@@ -1,0 +1,93 @@
+# # # # # # # # # # # # # #
+# 	  	  	  	  	  	  #
+#		Building		  #
+#			an			  #
+#		Anomaly		      #
+#		Detection		  #
+#		System			  #
+#						  #
+# # # # # # # # # # # # # #
+
+# Developing and Evaluating and Anomaly Detection System #
+
+
+  _ Topic:
+
+		_ The importance of real-number evaluation:
+
+
+  		   _ When developing a learning algorithm, making
+		   	 decision is much esier if we have a way of evaluating
+			 our learning algorithm
+
+		   _ Assume we have some labeled data, of anomalous and
+		   	 non-anomalous example.
+
+		   _ A training set, a cross validation set and a test set.
+
+
+  _ Example:
+
+		_ Aircraft engines:
+
+		  _ 10000 good
+		  _ 20 anomalous
+
+		  _ training, cross validation, test sets (60-20-20 %)
+		  _ only good example in the test set.
+
+
+  _ Algorithm:
+
+		_ fit model p(x) on training set.
+
+		_ on a cross validation/test example x, predict: y (0 or 1, 1 is anomaly
+
+
+
+		_ Possible evaluation metrics (Precision/Recall, F-score)
+
+		_ Can also use cross validation set to choose parameter epsilon
+
+# Anomaly Detection vs Supervised Learning #
+
+
+  	_ Anomaly detection:
+
+	  		  _ Very small number of positive example (anomaly)
+
+			  _ Large number of negative example (good)
+
+			  _ Many different "type" of anomalies.
+			  	Hard for any algorithm to learn from
+				positive examples what anomalies look like.
+
+			  _ Future anomalies may look nothing like any
+			    of the anomalous examples we've seen so far.
+
+			  _ Example:
+
+					_ Fraud detection
+
+					_ Manufacturing
+
+					_ Monitoring machines in a data center
+
+	_ Supervised learning:
+
+
+			  _ Large number of positive and negative example.
+
+			  _ Enough positive examples for algorithm to get
+			    a sense of what positive example are like
+
+			  _ future positive example likely to be similar to ones
+				in training set
+
+			  _ Example:
+
+					_ Email spam classification
+
+					_ Weather prediction
+
+					_ Cancer classification

@@ -1,0 +1,65 @@
+# # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	#
+#		Density				#
+#		Estimation			#
+#							#
+# # # # # # # # # # # # # # #
+
+
+# Problem Motivation #
+
+
+  _ Anomaly detection example:
+
+
+  			_ Aircraft engine:
+
+			  	_ x1 = heat generated
+				_ x2 = vibration intensity
+
+				_ New engine x[test], is it anomalous ?
+
+				_ Build a model p(x), _ if p(x[test]) < epsilon -> flag anomaly
+				  		  			  _ if p(x[test]) >= epsilon -> OK
+
+			_ Fraud detection:
+
+
+			    _ x{i} = features of user i's activities
+				_ model p(x) from data
+				_ Identify unusual users by checking
+				  which have p(x) < epsilon
+
+			_ Manufacturing:
+
+				_ Monitoring computers in a data center
+				_ x1 = memory use, x2 = number of disk accesses
+				_ x3 = CPU load, x4 = CPU load/network traffic
+
+# Gaussian Distribution #
+
+
+  _ Notation:			   |--> variance
+				   |->mean |
+		  _ x ~ N (mu, sigma{2})
+		  	  |-> distributed as
+
+		  _ p(x; mu, sigma{2}) = (1/racine(2pi)sigma)exp(-(x-mu){2}/(2sigma{2}))
+
+
+		  _ mu = (1/m)((m sum i=1) x{i})
+		  _ sigma{2} = (1/m)((m sum i=1) (x{i} - mu){2})
+
+
+# Algorithm #
+
+  	
+	_ Topic:
+
+		_ Density Estimaton:
+
+
+		  		  _ p(x) = p(x1;mu[2], sigma[2]{2})) * p(x2;mu[2], sigma[2]{2})) * ... * p(x[n]; mu[n], sigma[n]{2})
+
+
+				  		 = (n product j=1) p(x[j]; mu[j], sigma[j][2])
