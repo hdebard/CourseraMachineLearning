@@ -1,0 +1,100 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#							  #
+#		Multivariate		  #
+#		   Gaussian			  #
+#		Distribution		  #
+#							  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+
+# Multivariate Gaussian Distribution #
+
+
+  	_ Example:
+
+		_ Monitoring machines in a data center:
+
+		  		_ Some anomaly have same p() than good example ?
+
+
+
+	_ Topic:
+
+
+			_ MGD:
+
+			  _ Model p(x) all in one go:
+
+				  _ p(x;mu, sigma) = 1/((2pi){n/2} |sigma|{1/2}) * exp((-1/2) (x-mu){T}sigma{-1}(x-mu))
+
+
+
+# Anomaly Detection using the MGD #
+
+
+  	_ Notation:
+
+			_ Parameters: mu, esplison
+
+
+	_ Formula:
+
+			_ p(x;mu, sigma) = 1/((2pi){n/2} |sigma|{1/2}) * exp((-1/2) (x-mu){T}sigma{-1}(x-mu))
+
+
+	_ Algorithm:
+
+
+			_ Parameters fitting:
+				_ given training set: {x{1}, x{2},...x{m}}
+
+				_ mu = (1/m)((m sum i=1) x{i})
+				_ sigma = (1/m)((m sum i=1)x{i}-mu){T}
+
+			_ Given a new example x, compute:
+																						|->upercase
+			  	_ p(x;mu, sigma) = 1/((2pi){n/2} |sigma|{1/2}) * exp((-1/2) (x-mu){T}sigma{-1}(x-mu))
+				  		  |-> lowercase
+				_ Flag an anomaly if p(x) < epsilon
+				  	   	  		  	 	  	
+
+
+	_ Relationship to orignal model:
+
+	  	_ Original model: p(x) = p(x1) * ... * px(x{n})
+
+		   |--> corresponds to multivarite gaussian with a constrainte:
+		   		sigma = identity matrix
+				|->uppercase
+
+
+	_ Original model vs. Multivariate:
+
+
+
+	  _ Original model:
+
+	  		_ Manually create features to capture anomalies
+			  where x1,x2 take unusual combinations of
+			  values
+
+			_ Computationally cheaper
+			  (alternatively, scales better to large n(10,000;100,000))
+
+			_ Ok if m (training size) is small
+
+
+
+	  _ Multivariate:
+
+
+			_ Automatically captures correlations between features
+
+
+			_ Computationally more expensive
+
+
+			_ Must have m > n, or else sigma is non-invertable
+			  	   		 |--> even m > 10n

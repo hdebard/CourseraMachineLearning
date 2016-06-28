@@ -22,3 +22,7 @@ _ Studied:
 		  _ K-Means
 
 		  _ PCA
+
+		  _ Anomaly Detection
+
+		  _ Recommender system.

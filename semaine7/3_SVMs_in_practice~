@@ -39,7 +39,7 @@
 
 			 _ If n is small, m intermediate: svm with gaussian kernel
 
-			 _ If n is small, m is large: add more features and use lr or svm without kernel
+			 _ If n is small, m is large: add more featuresand use lr or svm without kernel
 
 
 			 _ Better use NN but it is slower to train.

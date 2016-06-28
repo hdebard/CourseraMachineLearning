@@ -22,7 +22,7 @@
 
 	    _ SVM Parameters:
 
-		  	  _ C ( = 1/lamda): - Large C: Lower bias, high variance,
+		  	  _ C ( = 1/m): - Large C: Lower bias, high variance,
 			  	  	  		_ Small C: Higher bias, low variance.
 
 			  _ sigma{2}: _ Large: Features f[i] vary more smoothly

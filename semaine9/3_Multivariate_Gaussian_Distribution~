@@ -1,0 +1,54 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#							  #
+#		Multivariate		  #
+#		   Gaussian			  #
+#		Distribution		  #
+#							  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+
+# Multivariate Gaussian Distribution #
+
+
+  	_ Example:
+
+		_ Monitoring machines in a data center:
+
+		  		_ Some anomaly have same p() than good example ?
+
+
+
+	_ Topic:
+
+
+			_ MGD:
+
+			  _ Model p(x) all in one go:
+
+				  _ p(x;mu, epsilon) = 1/((2pi){n/2} |epsilon|{1/2}) * exp((-1/2) (x-mu){T}epsilon{-1}(x-mu))
+
+
+
+# Anomaly Detection using the MGD #
+
+
+  	_ Notation:
+
+			_ Parameters: mu, esplison
+
+
+	_ Formula:
+
+			_ p(x;mu, epsilon) = 1/((2pi){n/2} |epsilon|{1/2}) * exp((-1/2) (x-mu){T}epsilon{-1}(x-mu))
+
+
+	_ Algorithm:
+
+
+			_ Parameters fitting:
+			_ given training set: {x{1}, x{2},...x{m}}
+
+			_ mu = (1/m)((m sum i=1) x{i})
+			_ epsilon = (1/m)((m sum i=1)x{i}-mu){T}

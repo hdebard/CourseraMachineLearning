@@ -1,0 +1,38 @@
+# # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	#
+#		Predicting			#
+#		  Movie				#
+#		 Ratings			#
+#							#
+# # # # # # # # # # # # # # #
+
+# Problem Formulation #
+
+  _ Notation:
+
+		_ n[u] = nbr of users
+
+		_ n[m] = nbr of movies
+
+		_ r(i,j) = 1 if user j rated movie i
+
+		_ y(i,j) = rating given by user j to
+		  		   movie i if (only if r(i,j) = 1)
+
+		_ theta{j} = parameter vector for user j
+
+		_ x{i} = feature vector for movie i
+
+# Content Based Recommendations #
+
+
+  _ Problem formulation:
+
+  		_ For user j, movie i, predicted rating: (theta{j}){T} * x{i}
+
+		_ m{j} = nbr of movies rated by user j
+
+		_ To learn theta{j}:
+
+		  min		   (1/2) * 	  sum   ((theta{}){T} * (X{i}) - y{i,j}){2} + ((lambda/(2)) ((n sum k=1) (theta[k]{j}){2})
+		  theta{j}           i:r(i,j) = 1 

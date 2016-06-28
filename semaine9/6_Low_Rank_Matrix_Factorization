@@ -1,0 +1,29 @@
+# # # # # # # # # # # # # # # #
+# 	  	  	  	  	  	  	  #
+#							  #
+#		Low Rank			  #
+#	Matrix Factorization	  #
+#							  #
+#							  #
+# # # # # # # # # # # # # # # #
+
+# Vectorization: Low Rank Matrix Factorization #
+
+
+
+
+
+
+
+
+
+
+# Implementation Detail: Mean Normalization #
+
+  	_ set undefined rating to 0 is a bad idea,
+	  better:
+
+	  	  _ compute the average
+
+		  _ set the rating to the average to have something
+		  	to start with this new user.
